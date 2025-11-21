@@ -3,6 +3,8 @@ import axios from 'axios'
 import admin from 'firebase-admin'
 
 if (!admin.apps.length) {
+   console.log('FIREBASE_SERVICE_ACCOUNT:', process.env.FIREBASE_SERVICE_ACCOUNT);
+
   const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)
   console.log('Service Account loaded')
   admin.initializeApp({
